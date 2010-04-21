@@ -113,7 +113,7 @@ class ControllerPaymentIpay88 extends Controller {
 		$this->data['Signature'] = $ipaySignature;
 		
 
-		$this->data['back'] = $this->url->https('checkout/payment');
+		$this->data['back'] = (HTTPS_SERVER . 'index.php?route=checkout/payment');
 		
 		$this->id       = 'payment';
 		$this->template = $this->config->get('config_template') . '/payment/ipay88.tpl';
@@ -160,7 +160,7 @@ class ControllerPaymentIpay88 extends Controller {
 		
 		$this->model_checkout_order->confirm($_POST['RefNo'], $this->config->get('ipay88_order_status_id'), "Payment ok", TRUE);	  
 
-				$this->data['continue'] = $this->url->https('checkout/success');
+				$this->data['continue'] = (HTTPS_SERVER . 'index.php?route=checkout/success');
 					
 		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/payment/ipay88_success.tpl')) {
@@ -178,7 +178,7 @@ class ControllerPaymentIpay88 extends Controller {
 		else
 		{
 		
-				$this->data['continue'] = $this->url->https('checkout/cart');
+				$this->data['continue'] = (HTTPS_SERVER . 'index.php?route=checkout/cart');
 		
 				if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/payment/ipay88_failure.tpl')) {
 					$this->template = $this->config->get('config_template') . '/template/payment/ipay88_failure.tpl';
