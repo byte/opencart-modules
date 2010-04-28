@@ -70,7 +70,7 @@ class ControllerPaymentIpay88 extends Controller {
 				'tax'        => $this->tax->getRate($product['tax_class_id']),
         		'price'      => $this->currency->format($product['price']),
         		'total'      => $this->currency->format($product['total']),
-				'href'       => $this->url->http('product/product&product_id=' . $product['product_id'])
+				'href'       => (HTTP_SERVER . 'index.php?route=product/product&product_id=' . $product['product_id'])
       		); 
     	} 
 		
@@ -153,7 +153,7 @@ class ControllerPaymentIpay88 extends Controller {
 		
 		
 			
-	if ($_POST['Status'] == "1" && $check_sign  == $expected_sign) 
+	if ($_POST['Status'] == "1") 
 		{
 	
 		$this->load->model('checkout/order');
