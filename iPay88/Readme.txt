@@ -1,6 +1,6 @@
 Descriptions:
 ============
-This is a iPay88 plugin for OPENCART version 1.4.x
+This is a iPay88 plugin for OPENCART version 1.4.7.
 
 More info at : http://blog.ipay88.com
 
@@ -8,13 +8,13 @@ More info at : http://blog.ipay88.com
 
 Release date:
 =============
-24-02-2010
+28-04-2010
 
 
 Developed by:
 =============
-kokmun@mobile88.com.my
-
+Originally developed by: kokmun@mobile88.com.my
+Modified to work with 1.4.7 by: colin@grok.my
 
 
 Installation:
