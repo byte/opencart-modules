@@ -16,7 +16,7 @@ class ControllerPaymentIpay88 extends Controller {
 			
 			$this->session->data['success'] = $this->language->get('text_success');
 
-			$this->redirect((HTTPS_SERVER . 'index.php?route=extension/payment'));
+			$this->redirect(HTTPS_SERVER . 'index.php?route=extension/payment');
 		}
 
 		$this->data['heading_title'] = $this->language->get('heading_title');
@@ -66,7 +66,9 @@ class ControllerPaymentIpay88 extends Controller {
   		$this->document->breadcrumbs = array();
 
    		$this->document->breadcrumbs[] = array(
-       		'href'      => (HTTPS_SERVER . 'index.php?route=common/home'),
+       		
+			
+			'href'      => (HTTPS_SERVER . 'index.php?route=common/home'),
        		'text'      => $this->language->get('text_home'),
       		'separator' => FALSE
    		);
@@ -82,7 +84,7 @@ class ControllerPaymentIpay88 extends Controller {
        		'text'      => $this->language->get('heading_title'),
       		'separator' => ' :: '
    		);
-				
+		
 		$this->data['action'] = (HTTPS_SERVER . 'index.php?route=payment/ipay88');
 
 		$this->data['cancel'] = (HTTPS_SERVER . 'index.php?route=extension/payment');

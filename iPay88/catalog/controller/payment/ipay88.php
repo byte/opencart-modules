@@ -116,7 +116,7 @@ class ControllerPaymentIpay88 extends Controller {
 		$this->data['back'] = (HTTPS_SERVER . 'index.php?route=checkout/payment');
 		
 		$this->id       = 'payment';
-		$this->template = $this->config->get('config_template') . '/payment/ipay88.tpl';
+		$this->template = $this->config->get('config_template') . '/template/payment/ipay88.tpl';
 		
 		$this->render();		
 	}
@@ -124,16 +124,10 @@ class ControllerPaymentIpay88 extends Controller {
 	public function callback() 
 	{
 		
-
 		$expected_sign = $_POST['Signature'];
 	    $merId = $this->config->get('ipay88_vendor');
         $ikey = $this->config->get('ipay88_password');	
-	
-		$expected_sign = "";
-	    $merId = "";
-        $ikey = "";	
-	
-	
+
 		$check_sign = "";
 		$ipaySignature = "";
 		$str = "";
@@ -141,6 +135,7 @@ class ControllerPaymentIpay88 extends Controller {
 		
 		$HashAmount = str_replace(array(',','.'), "", $_POST['Amount']);
 		$str = $ikey . $merId . $_POST['PaymentId'].trim(stripslashes($_POST['RefNo'])). $HashAmount . $_POST['Currency'].$_POST['Status'];
+	
 	
 		$str = sha1($str);
 	   
@@ -151,9 +146,9 @@ class ControllerPaymentIpay88 extends Controller {
        
 		$check_sign = base64_encode($ipaySignature);
 		
-		
+
 			
-	if ($_POST['Status'] == "1") 
+	if ($_POST['Status']=="1" && $check_sign==$expected_sign) 
 		{
 	
 		$this->load->model('checkout/order');
@@ -177,7 +172,7 @@ class ControllerPaymentIpay88 extends Controller {
 		}	
 		else
 		{
-		
+
 				$this->data['continue'] = (HTTPS_SERVER . 'index.php?route=checkout/cart');
 		
 				if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/payment/ipay88_failure.tpl')) {

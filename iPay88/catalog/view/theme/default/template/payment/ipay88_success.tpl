@@ -8,7 +8,7 @@
 <body>
 <div style="text-align: center;">
 <h2>Thank You !</h2>
-<h2>Your Transaction has Successfull</h2>
+<h2>Your Transaction has Successful</h2>
 </div>
 <script type="text/javascript"><!--
 setTimeout('location = \'<?php echo $continue; ?>\';', 2500);

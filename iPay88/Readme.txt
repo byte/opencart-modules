@@ -1,6 +1,6 @@
 Descriptions:
 ============
-This is a iPay88 plugin for OPENCART version 1.4.7.
+This is a iPay88 plugin for OPENCART version 1.4.x
 
 More info at : http://blog.ipay88.com
 
@@ -8,13 +8,12 @@ More info at : http://blog.ipay88.com
 
 Release date:
 =============
-28-04-2010
+03-05-2010
 
 
-Developed by:
-=============
-Originally developed by: kokmun@mobile88.com.my
-Modified to work with 1.4.7 by: colin@grok.my
+Changelog
+==========
+Support OpenCart 1.4.7
 
 
 Installation:
@@ -24,13 +23,13 @@ Installation:
 
 2. log in to your admin backend
 
-3. go to "Extensions" --> Payment --> iPay88 Payment Gateway --> install 
+3. go to "Extensions" --> Payment --> iPay88 Payment Gateway --> Install 
 
 4. Click "Edit" and you will see the following fields ;
 
-Merchnat Code:  <-- key in your merchant code here
+Merchant ID/Code:  <-- key in your merchant code here
 
-Merchnat Key:   <-- key in your merchant key here
+Merchant Key:   <-- key in your merchant key here
 
 Order Status:   <-- select your status for successful status
 
