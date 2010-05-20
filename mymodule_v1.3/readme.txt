@@ -4,7 +4,7 @@ Author: Dhani Satria
 Website: www.kreasimote.com
 	 linux.kreasimote.com
 	 bio-energi.blogspot.com
-Last Update: 28th January 2010
+Last Update: 20 May 2010
 License: GNU/GPL http://www.gnu.org/copyleft/gpl.html
 
 Purpose: Simple HTML module for OpenCart

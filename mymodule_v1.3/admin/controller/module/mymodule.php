@@ -18,8 +18,7 @@ class ControllerModuleMyModule extends Controller {
 					
 			$this->session->data['success'] = $this->language->get('text_success');
 						
-			$this->redirect((HTTPS_SERVER . 'index.php?route=
-((HTTPS_SERVER . 'index.php?route=extension/module'));
+			$this->redirect($this->url->https('extension/module'));
 		}
 				
 		$this->data['heading_title'] = $this->language->get('heading_title');
@@ -64,36 +63,26 @@ class ControllerModuleMyModule extends Controller {
   		$this->document->breadcrumbs = array();
 
    		$this->document->breadcrumbs[] = array(
-       		'href'      => (HTTPS_SERVER . 'index.php?route=
-(HTTPS_SERVER . 'index.php?route=
-((HTTPS_SERVER . 'index.php?route=common/home'),
+       		'href'      => $this->url->https('common/home'),
        		'text'      => $this->language->get('text_home'),
       		'separator' => FALSE
    		);
 
    		$this->document->breadcrumbs[] = array(
-       		'href'      => (HTTPS_SERVER . 'index.php?route=
-(HTTPS_SERVER . 'index.php?route=
-((HTTPS_SERVER . 'index.php?route=extension/module'),
+       		'href'      => $this->url->https('extension/module'),
        		'text'      => $this->language->get('text_module'),
       		'separator' => ' :: '
    		);
 		
    		$this->document->breadcrumbs[] = array(
-       		'href'      => (HTTPS_SERVER . 'index.php?route=
-(HTTPS_SERVER . 'index.php?route=
-((HTTPS_SERVER . 'index.php?route=module/mymodule'),
+       		'href'      => $this->url->https('module/mymodule'),
        		'text'      => $this->language->get('heading_title'),
       		'separator' => ' :: '
    		);
 		
-		$this->data['action'] = (HTTPS_SERVER . 'index.php?route=
-(HTTPS_SERVER . 'index.php?route=
-((HTTPS_SERVER . 'index.php?route=module/' . $this->_name);
+		$this->data['action'] = $this->url->https('module/' . $this->_name);
 		
-		$this->data['cancel'] = (HTTPS_SERVER . 'index.php?route=
-(HTTPS_SERVER . 'index.php?route=
-((HTTPS_SERVER . 'index.php?route=extension/module');
+		$this->data['cancel'] = $this->url->https('extension/module');
 
 		$this->load->model('localisation/language');
 		
